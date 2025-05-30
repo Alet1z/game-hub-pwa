@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/beltrangonzalez_mi_primer_app" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/conversor_RAGO_210225" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/garciaortiz_mi_primer_app" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/rago_backend_express" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/rago_frontend" vcs="Git" />
+  </component>
+</project>

@@ -1,0 +1,78 @@
+<!-- Plantilla original: https://tailwindcomponents.com/component/form-add-posts -->
+
+<!-- <form> Es una etiqueta HTML estándar que representa un formulario. Dentro de esta etiqueta van los campos de entrada como <input>, <select>, <textarea>, etc. -->
+
+<!-- [formGroup]="frmContacto" Esta es una directiva de Angular que vincula el formulario HTML con un FormGroup definido en el componente TypeScript.
+formGroup proviene del módulo ReactiveFormsModule.
+frmContacto es una instancia de FormGroup que tú defines en tu componente, por ejemplo: -->
+
+<!-- (ngSubmit)="onSubmit()" Esta es una directiva de Angular que escucha el evento de envío del formulario.
+Cuando el usuario presiona el botón de tipo submit, se dispara el evento ngSubmit.
+Esto ejecuta el método onSubmit() definido en el componente -->
+
+<form [formGroup]="frmContacto" (ngSubmit)="onSubmit()">
+  <!-- <div class="bg-indigo-50 md:px-20 pt-6"> -->
+    <div class="bg-white rounded-md px-6 py-10 max-w-2xl mx-auto">
+      <h1 class="text-center text-2xl font-bold text-gray-500 mb-10">
+        ADD COMMENT
+      </h1>
+      <div class="space-y-4">
+        <div>
+          <label for="name" class="text-lx font-serif">Name:</label>
+          <input
+            type="text"
+            placeholder="User name"
+            id="name"
+            class="ml-2 outline-none py-1 px-2 text-md border-2 rounded-md"
+            formControlName="name"/>
+            @if (frmContacto.get('name')?.invalid && (frmContacto.get('name')?.dirty || frmContacto.get('name')?.touched)) {
+              <div class="error">Name is required.</div>
+            }
+        </div>
+        <div>
+          <label for="email" class="text-lx font-serif">Email:</label>
+          <input
+            type="text"
+            placeholder="Your email"
+            id="email"
+            class="ml-2 outline-none py-1 px-2 text-md border-2 rounded-md"
+            formControlName="email"/>
+            @if (frmContacto.get('email')?.invalid && (frmContacto.get('email')?.dirty || frmContacto.get('email')?.touched)) {
+              @if (frmContacto.get('email')?.errors?.['required']) {
+                <div class="error">Email is required.</div>
+              }
+              @if (frmContacto.get('email')?.errors?.['email']) {
+                <div class="error">Invalid email format.</div>
+              }
+            }
+        </div>
+        <div>
+          <label for="message" class="block mb-2 text-lg font-serif">Message:</label>
+          <textarea
+            id="message"
+            cols="30"
+            rows="10"
+            placeholder="Write here..."
+            class="w-full font-serif p-4 text-gray-600 bg-indigo-50 outline-none rounded-md"
+            formControlName="message"
+          ></textarea>
+          @if (frmContacto.get('message')?.invalid && (frmContacto.get('message')?.dirty || frmContacto.get('message')?.touched)) {
+            <div class="error">Message is required.</div>
+          }
+        </div>
+        <!-- type="submit" Indica que este botón envía el formulario. Cuando se presiona, se dispara el evento (ngSubmit) en el <form>. -->
+        <!-- [disabled]="!frmContacto.valid" Esta es una vinculación de propiedad (property binding) de Angular.
+            El botón estará deshabilitado (disabled) si el formulario no es válido.
+            !frmContacto.valid significa:
+              Si el formulario no cumple las validaciones, el botón estará desactivado.
+            Solo cuando todos los campos requeridos estén bien llenados, se podrá hacer clic. -->
+        <button
+          class="px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-indigo-100 bg-indigo-600"
+          type="submit"
+          [disabled]="!frmContacto.valid">
+          ADD COMMENT
+        </button>
+      </div>
+    </div>
+  <!-- </div> -->
+</form>

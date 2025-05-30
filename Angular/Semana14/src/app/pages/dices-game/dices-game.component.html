@@ -1,0 +1,12 @@
+<div class="flex space-x-3">
+    <app-dice [valor]="valor1" />
+    <app-dice [valor]="valor2" />
+    <app-dice [valor]="valor3" />
+</div>
+<div class=" mt-3 py-3">
+    <button class="px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-indigo-100 bg-indigo-600" (click)="lanzar()">
+      Lanzar los dados
+    </button>
+    <br>
+    <p class="text-center">Resultado: <span class="text-orange-500 font-semibold">{{resultado()}}</span></p>
+  </div>

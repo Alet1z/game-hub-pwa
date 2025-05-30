@@ -1,0 +1,17 @@
+{
+    "lang": "es-SV",
+    "name": "Juego buscaminas desarrollado para poryecto final de la materia de Programancón de Dispositivos Móviles de la UFG",
+    "show_name": "Buscaminas CBBG",
+    "description": "Juego buscaminas, el usuario debe seleccionar las celdas y eveital accionar una mina hasta completarlo",
+    "start_url": "./",
+    "background_color": "##7efcad",
+    "theme_color": "##7efcad",
+    "orientation": "any",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": ".media/icons/buscaminas-icon.png",
+            "sizes": "512x512"
+        }
+    ]
+}

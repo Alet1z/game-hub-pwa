@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+        content="Juego buscaminas desarrollado para poryecto final de la materia de Programancón de Dispositivos Móviles de la UFG">
+    <meta name="keywords" content="buscaminas,estudiantes,educacion,ufg,juego">
+    <meta name="autor" content="Christopher Beltrán">
+    <meta name="copyright" content="2025 CBBG">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Buscaminas</title>
+    <link rel="stylesheet" href="../CSS/style_mines.css">
+    <link rel="shortcut icon" href="../MEDIA/icons/buscaminas-icon.png">
+    <link rel="manifest" href="manifest.json">
+    <a href="https://www.flaticon.com/free-icons/bomb" title="bomb icons"></a>
+    <!-- <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js', { scope: './' });
+        }
+    </script> -->
+</head>
+
+<body>
+    <div>
+        <button onclick="cambiarNivel('facil')" class="boton">Fácil</button>
+        <button onclick="cambiarNivel('medio')" class="boton">Medio</button>
+        <button onclick="cambiarNivel('dificil')" class="boton">Difícil</button>
+        <button onclick="reiniciarJuego()" class="boton">Reiniciar juego</button>
+        
+    </div>
+    
+    
+
+    <div class="container">
+        <p id="contador-banderas">Banderas: 0/10</p>
+
+        <p id="instrucciones" class="instrucciones"> INSTRUCCIONES <br>
+            1. Descubre todos los bloques sin activar las minas. <br> 
+            2. Utiliza las banderas para marcar donde pueda haber una posible mina. <br>
+            3. Si colocar una bandera en un bloque que no tiene mina, y este es descubierto, perderás una bandera. <br>
+            4. Si descubres un bloque con una mina, perderás el juego. <br>  
+        </p>
+
+        <p id="mensaje" class="mensaje"></p>
+
+    </div>
+
+    <div id="tablero" class="tablero"></div>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js', { scope: './' });
+        }
+        iniciarTablero();
+    </script>
+    <script src="../JAVASCRIPT/script_mines.js"></script>
+    
+</body>
+
+</html>

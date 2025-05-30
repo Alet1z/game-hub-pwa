@@ -1,0 +1,35 @@
+<!-- Contenedor principal que ocupa al menos la pantalla -->
+<div class="min-h-screen flex flex-col">
+  <!-- HEADER -->
+  <nav class="bg-gray-100">
+    <div class="flex justify-between items-center bg-white py-6 lg:px-40 md:px-20 px-10">
+
+      <a href="#" class="flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mr-3 h-6 text-blue-500 sm:h-9">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
+        </svg>
+        <span class="self-center whitespace-nowrap text-xl font-semibold">Programación III</span>
+      </a>
+
+      <ul class="lg:flex hidden items-center space-x-10">
+        <li class="text-lg font-semibold hover:text-red-500 transition duration-200 cursor-pointer" routerLink="/about">About</li>
+        <li class="text-lg font-semibold hover:text-red-500 transition duration-200 cursor-pointer" routerLink="/contact">Contact</li>
+        <li class="text-lg font-semibold hover:text-red-500 transition duration-200 cursor-pointer" routerLink="/dices-game">Dices game</li>
+        <li class="text-lg font-semibold hover:text-red-500 transition duration-200 cursor-pointer" routerLink="/products">Products</li>
+        <li class="text-lg font-semibold hover:text-red-500 transition duration-200 cursor-pointer" routerLink="/user">Users</li>
+      </ul>
+      <div class="lg:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ROUTER OUTLET -->
+  <div class="flex-grow w-full bg-gray-100 flex items-center justify-center space-x-3">
+    <router-outlet></router-outlet>
+  </div>
+
+  <!-- FOOTER -->
+</div>

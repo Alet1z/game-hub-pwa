@@ -1,0 +1,33 @@
+<!-- Plantilla original: https://tailwindcomponents.com/component/dice-animation -->
+
+@if ((valor()) != 0){
+  <div class="bg-gray-100 flex items-center justify-center">
+    <div class="h-36 w-36 bg-white rounded-xl shadow-xl transform rotate-3 flex justify-between p-4 hover:scale-150 transition duration-700 hover:rotate-45 hover:shadow-2xl">
+      @if((valor()) > 0 && (valor()) < 4 ){
+      <div class="space-y-4 pt-1">
+        @for (point of [1,2,3].slice(0, (valor())); track $index) {
+        <div class="w-6 h-6 bg-gray-700 rounded-full"></div>
+        }
+      </div>
+      <div class="space-y-4 pt-1">
+        <span class="text-3xl text-gray-700"> {{ valor() }}</span>
+      </div>
+      <div class="space-y-4 pt-1"></div>
+      } @else{
+      <div class="space-y-4 pt-1">
+        @for (point of [1,2,3].slice(0, (valor())); track $index) {
+        <div class="w-6 h-6 bg-gray-700 rounded-full"></div>
+        }
+      </div>
+      <div class="space-y-4 pt-1">
+        <span class="text-3xl text-gray-700"> {{ valor() }}</span>
+      </div>
+      <div class="space-y-4 pt-1">
+        @for (point of [1,2,3]; track $index) {
+        <div class="w-6 h-6 bg-gray-700 rounded-full"></div>
+        }
+      </div>
+      }
+    </div>
+  </div>
+}
